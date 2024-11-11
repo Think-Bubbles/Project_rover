@@ -128,7 +128,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Project_rover
+CMAKE_PROJECT_NAME:STATIC=untitled1
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=D:/CodingIDE/JetBrainsApps/CLion/bin/mingw/bin/ranlib.exe
@@ -221,6 +221,15 @@ Project_rover_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Project_rover_SOURCE_DIR:STATIC=D:/Dev/C/Project_rover
+
+//Value Computed by CMake
+untitled1_BINARY_DIR:STATIC=D:/Dev/C/Project_rover/cmake-build-debug
+
+//Value Computed by CMake
+untitled1_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+untitled1_SOURCE_DIR:STATIC=D:/Dev/C/Project_rover
 
 
 ########################
