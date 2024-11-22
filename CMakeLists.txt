@@ -13,5 +13,7 @@ add_executable(Project_rover main.c
         queue.c
         queue.h
         stack.c
-        stack.h)
+        stack.h
+        CardPicker.c
+        CardPicker.h)
 

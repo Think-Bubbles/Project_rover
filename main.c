@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "map.h"
+#include "CardPicker.h"
 
 int main() {
     t_map map;
@@ -32,5 +33,20 @@ int main() {
         printf("\n");
     }
     displayMap(map);
+
+    //---- Part to test card picker ----
+    Card_deck test = initializeDeck();
+    print_list_from_head(*test);
+
+    t_move testHand[9];
+    DrawCard(test,testHand);
+
+    printf("\n");
+    //print hand
+    for (int i = 0; i < 9; i++) {
+        printf("%s ", getCardString(testHand[i]));
+    }
+    //----------------------------------
+
     return 0;
 }
