@@ -15,5 +15,8 @@ add_executable(Project_rover main.c
         stack.c
         stack.h
         CardPicker.c
-        CardPicker.h)
+        CardPicker.h
+        tree.h
+        tree.c
+)
 
