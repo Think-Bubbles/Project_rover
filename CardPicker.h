@@ -19,7 +19,7 @@ typedef struct Card_Node {
 typedef Card_Node** Card_deck; /// Defines a pointer to a pointer to a Card_Node (representing the deck).
 typedef Card_Node** Card_hand; /// Defines a pointer to a pointer to a Card_Node (representing a hand of cards).
 
-static int NUMBER_OF_MOVE = 5;
+static int NUMBER_OF_MOVE = 9;
 //-----------------------------------------------
 
 //------- Functions to creates cards and Deck ------------

@@ -37,15 +37,15 @@ t_stack extractPath(p_node node, p_tree tree)
         push(&path, current->move); //on ajoute le mouvement dans le stack
         current = current->parent; //on remonte dans l'arbre
     }
-
+    /*
     t_stack final_path = createStack(6);
 
     while (path.nbElts > 0) //on inverse le chemin psk on veut de la racine au noeud
     {
         t_move move = pop(&path);
         push(&final_path, pop(&path)); //on inverse le stack
-    }
-    return final_path;
+    }*/
+    return path;
 }
 
 t_stack findBestPath(t_tree *tree)
@@ -55,7 +55,7 @@ t_stack findBestPath(t_tree *tree)
 }
 
 void printBestPath(t_stack path) {
-    printf("Chemin optimal (racine → nœud) :\n");
+    printf("Chemin optimal (racine -> noeud) :\n");
     while (path.nbElts > 0) {
         // Dépiler un élément de la pile
         t_move move = pop(&path);

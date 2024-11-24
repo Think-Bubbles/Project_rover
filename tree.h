@@ -21,7 +21,7 @@ typedef struct s_tree
     int max_depth;
 }t_tree, *p_tree;
 
-static int NB_UTILIZED_MOVES = 3;
+static int NB_UTILIZED_MOVES = 5;
 
 /**
  * @brief Creates a new node in the tree with specified parameters.
