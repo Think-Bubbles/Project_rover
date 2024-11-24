@@ -29,9 +29,10 @@ typedef struct s_tree
 
 p_node createNode(t_localisation loc, t_move move, int cost, int depth, int num_sons, t_node *parent);
 
-p_tree createTree(t_localisation root_loc);
 
-void printTree(p_node node, int depth);
+p_tree createTree(t_localisation);
+
+void printTree(p_node, int);
 
 void deleteNode(p_node node);
 

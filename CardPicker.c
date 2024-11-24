@@ -88,7 +88,7 @@ void DrawCard(Card_deck deck, t_move* hand)
             n = n->next;
         }
         printf("Card drawn: %s\n", getCardString(n->data));
-        hand[i] = n->data;
+        hand[i] = n->data; // Insert into our list the type of movement we picked.
 
         // Remove the card from the deck
         if (n->prev != NULL) { // If the drawn card is not the first one in the deck,
