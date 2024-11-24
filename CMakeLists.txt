@@ -18,5 +18,7 @@ add_executable(Project_rover main.c
         CardPicker.h
         tree.h
         tree.c
+        paths.c
+        paths.h
 )
 
