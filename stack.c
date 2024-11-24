@@ -1,7 +1,3 @@
-//
-// Created by flasque on 19/10/2024.
-//
-
 #include <stdlib.h>
 #include <assert.h>
 #include "stack.h"

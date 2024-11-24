@@ -1,33 +1,23 @@
-//
-// Created by HIM on 23/11/2024.
-//
-
-//
-// Created by HIM on 12/11/2024.
-//
-
 #include "tree.h"
 
-p_node createNode(t_localisation loc, t_move move, int cost, int depth, int num_sons, t_node *parent)
-{
-    p_node node = (p_node)malloc(sizeof(t_node));
+//------- Functions to creates Nodes and Trees ------------
 
-    node->cost = cost;
-    node->depth = depth;
-    node->num_sons = num_sons;
-    node->loc = loc;
-    node->move = move;
-    node->parent = parent;
-    node->sons = (p_node*)malloc(num_sons*sizeof(p_node));
-    for (int i= 0; i < num_sons; i++)
-    {
-        node->sons[i]= NULL;
-    }
+p_node createNode(t_localisation loc, t_move move, int cost, int depth, int num_sons, t_node *parent) {
+    p_node node = malloc(sizeof(t_node));
+
+    node->loc = loc; // Stock the rovers localisation (coordinates and orientation)
+    node->move = move; // Stock the type of movement
+    node->cost = cost; // Stock the cost of moving on a certain node
+    node->depth = depth; // Stock the height of a given node
+    node->parent = parent; // Stock the address of the nodes parent
+    node->num_sons = num_sons; // Stock the number of leaves a node has
+    node->sons = malloc(num_sons*sizeof(p_node));
+    for (int i= 0; i < num_sons; i++) node->sons[i]= NULL; // Create a list containing pointers to all the nodes sons.
+
     return node;
 }
 
-p_tree createTree(t_localisation root_loc)
-{
+p_tree createTree(t_localisation root_loc) {
     p_tree tree = malloc(sizeof (t_tree));
     t_move no_move = -1;
     int num_sons = 9;
@@ -36,14 +26,13 @@ p_tree createTree(t_localisation root_loc)
     return tree;
 }
 
-void deleteNode(p_node node)
-{
-    for (int i = 0; i < node->num_sons; i++)
-    {
-        if (node->sons[i])
-        {
-            deleteNode(node->sons[i]);
-        }
+//-----------------------------------------------------------
+
+
+void deleteNode(p_node node) {
+    for (int i = 0; i < node->num_sons; i++) { // Recursive loop to start work from the ground up deleting all the nodes.
+        if (node->sons[i]) deleteNode(node->sons[i]);
+
 
     }
     free(node->sons);
@@ -52,8 +41,7 @@ void deleteNode(p_node node)
     free(node);
 }
 
-void deleteTree(p_tree tree)
-{
+void deleteTree(p_tree tree) {
     deleteNode(tree->root);
     free(tree);
 }
@@ -89,6 +77,7 @@ t_localisation ergMove(t_localisation loc, t_move mvt) {
 }
 
 t_localisation adjustAndApplyMove(t_localisation loc, t_move mvt) {
+    // Function to account for the change in events if we cross through an Erg terrain
     t_move adjustedMove = mvt;
 
     if (mvt == F_30) {
@@ -98,7 +87,7 @@ t_localisation adjustAndApplyMove(t_localisation loc, t_move mvt) {
     } else if (mvt == U_TURN) {
 
         static int toggle = 0;
-        adjustedMove = (toggle++ % 2 == 0) ? T_LEFT : T_RIGHT;
+        adjustedMove = (toggle++ % 2 == 0) ? T_LEFT : T_RIGHT; // If toggle is even then turn left, otherwise turn right
     }
     return move(loc, adjustedMove);
 }
@@ -222,15 +211,15 @@ p_tree buildTree(t_map map, int maxDepth, t_localisation iniLoc) {
 }
 void printTree(p_node node, int depth) {
     if (node->depth == 5) {
-        return;
+        return; // We're at the bottom layer of the tree meaning there is nothing left to be shown
     }
 
     for (int i = 0; i < depth; i++) {
-        printf("  ");
+        printf("  "); // Necessary spaces between each node
     }
     printf("Node at (%d, %d) with cost %d\n", node->loc.pos.x, node->loc.pos.y, node->cost);
 
-    for (int i = 0; i < node->num_sons; i++) {
+    for (int i = 0; i < node->num_sons; i++) { // Recursive function to show also show the nodes sons.
         printTree(node->sons[i], depth + 1);
     }
 }

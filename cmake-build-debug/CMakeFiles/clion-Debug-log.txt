@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2023.3.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\batur\Desktop\okul\Project_rover -B C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug
+D:\CodingIDE\JetBrainsApps\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S D:\Dev\C\Rover_project\Project_rover -B D:\Dev\C\Rover_project\Project_rover\cmake-build-debug
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
@@ -11,9 +11,9 @@ CMake Deprecation Warning:
 -- The C compiler identification is GNU 13.1.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2023.3.3/bin/mingw/bin/gcc.exe - skipped
+-- Check for working C compiler: D:/CodingIDE/JetBrainsApps/CLion/bin/mingw/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (1.4s)
+-- Configuring done (3.6s)
 -- Generating done (0.0s)
--- Build files have been written to: C:/Users/batur/Desktop/okul/Project_rover/cmake-build-debug
+-- Build files have been written to: D:/Dev/C/Rover_project/Project_rover/cmake-build-debug

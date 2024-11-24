@@ -1,7 +1,3 @@
-//
-// Created by HIM on 23/11/2024.
-//
-
 #ifndef PROJECT_ROVER_TREE_H
 #define PROJECT_ROVER_TREE_H
 

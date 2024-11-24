@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project_rover.dir/queue.c.obj.d"
   "CMakeFiles/Project_rover.dir/stack.c.obj"
   "CMakeFiles/Project_rover.dir/stack.c.obj.d"
+  "CMakeFiles/Project_rover.dir/tree.c.obj"
+  "CMakeFiles/Project_rover.dir/tree.c.obj.d"
   "Project_rover.exe"
   "Project_rover.exe.manifest"
   "Project_rover.pdb"
