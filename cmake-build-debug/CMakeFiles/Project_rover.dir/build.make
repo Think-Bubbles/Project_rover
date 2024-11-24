@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = D:\CodingIDE\JetBrainsApps\CLion\bin\cmake\win\x64\bin\cmake.exe
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.3.3\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = D:\CodingIDE\JetBrainsApps\CLion\bin\cmake\win\x64\bin\cmake.exe -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2023.3.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Dev\C\Rover_project\Project_rover
+CMAKE_SOURCE_DIR = C:\Users\batur\Desktop\okul\Project_rover
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Dev\C\Rover_project\Project_rover\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Project_rover.dir/depend.make
@@ -69,116 +69,116 @@ include CMakeFiles/Project_rover.dir/progress.make
 include CMakeFiles/Project_rover.dir/flags.make
 
 CMakeFiles/Project_rover.dir/main.c.obj: CMakeFiles/Project_rover.dir/flags.make
-CMakeFiles/Project_rover.dir/main.c.obj: D:/Dev/C/Rover_project/Project_rover/main.c
+CMakeFiles/Project_rover.dir/main.c.obj: C:/Users/batur/Desktop/okul/Project_rover/main.c
 CMakeFiles/Project_rover.dir/main.c.obj: CMakeFiles/Project_rover.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Project_rover.dir/main.c.obj"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/main.c.obj -MF CMakeFiles\Project_rover.dir\main.c.obj.d -o CMakeFiles\Project_rover.dir\main.c.obj -c D:\Dev\C\Rover_project\Project_rover\main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Project_rover.dir/main.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/main.c.obj -MF CMakeFiles\Project_rover.dir\main.c.obj.d -o CMakeFiles\Project_rover.dir\main.c.obj -c C:\Users\batur\Desktop\okul\Project_rover\main.c
 
 CMakeFiles/Project_rover.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project_rover.dir/main.c.i"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Dev\C\Rover_project\Project_rover\main.c > CMakeFiles\Project_rover.dir\main.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\batur\Desktop\okul\Project_rover\main.c > CMakeFiles\Project_rover.dir\main.c.i
 
 CMakeFiles/Project_rover.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project_rover.dir/main.c.s"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Dev\C\Rover_project\Project_rover\main.c -o CMakeFiles\Project_rover.dir\main.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\batur\Desktop\okul\Project_rover\main.c -o CMakeFiles\Project_rover.dir\main.c.s
 
 CMakeFiles/Project_rover.dir/loc.c.obj: CMakeFiles/Project_rover.dir/flags.make
-CMakeFiles/Project_rover.dir/loc.c.obj: D:/Dev/C/Rover_project/Project_rover/loc.c
+CMakeFiles/Project_rover.dir/loc.c.obj: C:/Users/batur/Desktop/okul/Project_rover/loc.c
 CMakeFiles/Project_rover.dir/loc.c.obj: CMakeFiles/Project_rover.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Project_rover.dir/loc.c.obj"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/loc.c.obj -MF CMakeFiles\Project_rover.dir\loc.c.obj.d -o CMakeFiles\Project_rover.dir\loc.c.obj -c D:\Dev\C\Rover_project\Project_rover\loc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Project_rover.dir/loc.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/loc.c.obj -MF CMakeFiles\Project_rover.dir\loc.c.obj.d -o CMakeFiles\Project_rover.dir\loc.c.obj -c C:\Users\batur\Desktop\okul\Project_rover\loc.c
 
 CMakeFiles/Project_rover.dir/loc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project_rover.dir/loc.c.i"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Dev\C\Rover_project\Project_rover\loc.c > CMakeFiles\Project_rover.dir\loc.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\batur\Desktop\okul\Project_rover\loc.c > CMakeFiles\Project_rover.dir\loc.c.i
 
 CMakeFiles/Project_rover.dir/loc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project_rover.dir/loc.c.s"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Dev\C\Rover_project\Project_rover\loc.c -o CMakeFiles\Project_rover.dir\loc.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\batur\Desktop\okul\Project_rover\loc.c -o CMakeFiles\Project_rover.dir\loc.c.s
 
 CMakeFiles/Project_rover.dir/moves.c.obj: CMakeFiles/Project_rover.dir/flags.make
-CMakeFiles/Project_rover.dir/moves.c.obj: D:/Dev/C/Rover_project/Project_rover/moves.c
+CMakeFiles/Project_rover.dir/moves.c.obj: C:/Users/batur/Desktop/okul/Project_rover/moves.c
 CMakeFiles/Project_rover.dir/moves.c.obj: CMakeFiles/Project_rover.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Project_rover.dir/moves.c.obj"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/moves.c.obj -MF CMakeFiles\Project_rover.dir\moves.c.obj.d -o CMakeFiles\Project_rover.dir\moves.c.obj -c D:\Dev\C\Rover_project\Project_rover\moves.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Project_rover.dir/moves.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/moves.c.obj -MF CMakeFiles\Project_rover.dir\moves.c.obj.d -o CMakeFiles\Project_rover.dir\moves.c.obj -c C:\Users\batur\Desktop\okul\Project_rover\moves.c
 
 CMakeFiles/Project_rover.dir/moves.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project_rover.dir/moves.c.i"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Dev\C\Rover_project\Project_rover\moves.c > CMakeFiles\Project_rover.dir\moves.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\batur\Desktop\okul\Project_rover\moves.c > CMakeFiles\Project_rover.dir\moves.c.i
 
 CMakeFiles/Project_rover.dir/moves.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project_rover.dir/moves.c.s"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Dev\C\Rover_project\Project_rover\moves.c -o CMakeFiles\Project_rover.dir\moves.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\batur\Desktop\okul\Project_rover\moves.c -o CMakeFiles\Project_rover.dir\moves.c.s
 
 CMakeFiles/Project_rover.dir/map.c.obj: CMakeFiles/Project_rover.dir/flags.make
-CMakeFiles/Project_rover.dir/map.c.obj: D:/Dev/C/Rover_project/Project_rover/map.c
+CMakeFiles/Project_rover.dir/map.c.obj: C:/Users/batur/Desktop/okul/Project_rover/map.c
 CMakeFiles/Project_rover.dir/map.c.obj: CMakeFiles/Project_rover.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Project_rover.dir/map.c.obj"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/map.c.obj -MF CMakeFiles\Project_rover.dir\map.c.obj.d -o CMakeFiles\Project_rover.dir\map.c.obj -c D:\Dev\C\Rover_project\Project_rover\map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Project_rover.dir/map.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/map.c.obj -MF CMakeFiles\Project_rover.dir\map.c.obj.d -o CMakeFiles\Project_rover.dir\map.c.obj -c C:\Users\batur\Desktop\okul\Project_rover\map.c
 
 CMakeFiles/Project_rover.dir/map.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project_rover.dir/map.c.i"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Dev\C\Rover_project\Project_rover\map.c > CMakeFiles\Project_rover.dir\map.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\batur\Desktop\okul\Project_rover\map.c > CMakeFiles\Project_rover.dir\map.c.i
 
 CMakeFiles/Project_rover.dir/map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project_rover.dir/map.c.s"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Dev\C\Rover_project\Project_rover\map.c -o CMakeFiles\Project_rover.dir\map.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\batur\Desktop\okul\Project_rover\map.c -o CMakeFiles\Project_rover.dir\map.c.s
 
 CMakeFiles/Project_rover.dir/queue.c.obj: CMakeFiles/Project_rover.dir/flags.make
-CMakeFiles/Project_rover.dir/queue.c.obj: D:/Dev/C/Rover_project/Project_rover/queue.c
+CMakeFiles/Project_rover.dir/queue.c.obj: C:/Users/batur/Desktop/okul/Project_rover/queue.c
 CMakeFiles/Project_rover.dir/queue.c.obj: CMakeFiles/Project_rover.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Project_rover.dir/queue.c.obj"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/queue.c.obj -MF CMakeFiles\Project_rover.dir\queue.c.obj.d -o CMakeFiles\Project_rover.dir\queue.c.obj -c D:\Dev\C\Rover_project\Project_rover\queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Project_rover.dir/queue.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/queue.c.obj -MF CMakeFiles\Project_rover.dir\queue.c.obj.d -o CMakeFiles\Project_rover.dir\queue.c.obj -c C:\Users\batur\Desktop\okul\Project_rover\queue.c
 
 CMakeFiles/Project_rover.dir/queue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project_rover.dir/queue.c.i"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Dev\C\Rover_project\Project_rover\queue.c > CMakeFiles\Project_rover.dir\queue.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\batur\Desktop\okul\Project_rover\queue.c > CMakeFiles\Project_rover.dir\queue.c.i
 
 CMakeFiles/Project_rover.dir/queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project_rover.dir/queue.c.s"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Dev\C\Rover_project\Project_rover\queue.c -o CMakeFiles\Project_rover.dir\queue.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\batur\Desktop\okul\Project_rover\queue.c -o CMakeFiles\Project_rover.dir\queue.c.s
 
 CMakeFiles/Project_rover.dir/stack.c.obj: CMakeFiles/Project_rover.dir/flags.make
-CMakeFiles/Project_rover.dir/stack.c.obj: D:/Dev/C/Rover_project/Project_rover/stack.c
+CMakeFiles/Project_rover.dir/stack.c.obj: C:/Users/batur/Desktop/okul/Project_rover/stack.c
 CMakeFiles/Project_rover.dir/stack.c.obj: CMakeFiles/Project_rover.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Project_rover.dir/stack.c.obj"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/stack.c.obj -MF CMakeFiles\Project_rover.dir\stack.c.obj.d -o CMakeFiles\Project_rover.dir\stack.c.obj -c D:\Dev\C\Rover_project\Project_rover\stack.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Project_rover.dir/stack.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/stack.c.obj -MF CMakeFiles\Project_rover.dir\stack.c.obj.d -o CMakeFiles\Project_rover.dir\stack.c.obj -c C:\Users\batur\Desktop\okul\Project_rover\stack.c
 
 CMakeFiles/Project_rover.dir/stack.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project_rover.dir/stack.c.i"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Dev\C\Rover_project\Project_rover\stack.c > CMakeFiles\Project_rover.dir\stack.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\batur\Desktop\okul\Project_rover\stack.c > CMakeFiles\Project_rover.dir\stack.c.i
 
 CMakeFiles/Project_rover.dir/stack.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project_rover.dir/stack.c.s"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Dev\C\Rover_project\Project_rover\stack.c -o CMakeFiles\Project_rover.dir\stack.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\batur\Desktop\okul\Project_rover\stack.c -o CMakeFiles\Project_rover.dir\stack.c.s
 
 CMakeFiles/Project_rover.dir/CardPicker.c.obj: CMakeFiles/Project_rover.dir/flags.make
-CMakeFiles/Project_rover.dir/CardPicker.c.obj: D:/Dev/C/Rover_project/Project_rover/CardPicker.c
+CMakeFiles/Project_rover.dir/CardPicker.c.obj: C:/Users/batur/Desktop/okul/Project_rover/CardPicker.c
 CMakeFiles/Project_rover.dir/CardPicker.c.obj: CMakeFiles/Project_rover.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Project_rover.dir/CardPicker.c.obj"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/CardPicker.c.obj -MF CMakeFiles\Project_rover.dir\CardPicker.c.obj.d -o CMakeFiles\Project_rover.dir\CardPicker.c.obj -c D:\Dev\C\Rover_project\Project_rover\CardPicker.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Project_rover.dir/CardPicker.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/CardPicker.c.obj -MF CMakeFiles\Project_rover.dir\CardPicker.c.obj.d -o CMakeFiles\Project_rover.dir\CardPicker.c.obj -c C:\Users\batur\Desktop\okul\Project_rover\CardPicker.c
 
 CMakeFiles/Project_rover.dir/CardPicker.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project_rover.dir/CardPicker.c.i"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Dev\C\Rover_project\Project_rover\CardPicker.c > CMakeFiles\Project_rover.dir\CardPicker.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\batur\Desktop\okul\Project_rover\CardPicker.c > CMakeFiles\Project_rover.dir\CardPicker.c.i
 
 CMakeFiles/Project_rover.dir/CardPicker.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project_rover.dir/CardPicker.c.s"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Dev\C\Rover_project\Project_rover\CardPicker.c -o CMakeFiles\Project_rover.dir\CardPicker.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\batur\Desktop\okul\Project_rover\CardPicker.c -o CMakeFiles\Project_rover.dir\CardPicker.c.s
 
 CMakeFiles/Project_rover.dir/tree.c.obj: CMakeFiles/Project_rover.dir/flags.make
-CMakeFiles/Project_rover.dir/tree.c.obj: D:/Dev/C/Rover_project/Project_rover/tree.c
+CMakeFiles/Project_rover.dir/tree.c.obj: C:/Users/batur/Desktop/okul/Project_rover/tree.c
 CMakeFiles/Project_rover.dir/tree.c.obj: CMakeFiles/Project_rover.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Project_rover.dir/tree.c.obj"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/tree.c.obj -MF CMakeFiles\Project_rover.dir\tree.c.obj.d -o CMakeFiles\Project_rover.dir\tree.c.obj -c D:\Dev\C\Rover_project\Project_rover\tree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Project_rover.dir/tree.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project_rover.dir/tree.c.obj -MF CMakeFiles\Project_rover.dir\tree.c.obj.d -o CMakeFiles\Project_rover.dir\tree.c.obj -c C:\Users\batur\Desktop\okul\Project_rover\tree.c
 
 CMakeFiles/Project_rover.dir/tree.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project_rover.dir/tree.c.i"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Dev\C\Rover_project\Project_rover\tree.c > CMakeFiles\Project_rover.dir\tree.c.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\batur\Desktop\okul\Project_rover\tree.c > CMakeFiles\Project_rover.dir\tree.c.i
 
 CMakeFiles/Project_rover.dir/tree.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project_rover.dir/tree.c.s"
-	D:\CodingIDE\JetBrainsApps\CLion\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Dev\C\Rover_project\Project_rover\tree.c -o CMakeFiles\Project_rover.dir\tree.c.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\batur\Desktop\okul\Project_rover\tree.c -o CMakeFiles\Project_rover.dir\tree.c.s
 
 # Object files for target Project_rover
 Project_rover_OBJECTS = \
@@ -206,7 +206,7 @@ Project_rover.exe: CMakeFiles/Project_rover.dir/build.make
 Project_rover.exe: CMakeFiles/Project_rover.dir/linkLibs.rsp
 Project_rover.exe: CMakeFiles/Project_rover.dir/objects1.rsp
 Project_rover.exe: CMakeFiles/Project_rover.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable Project_rover.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable Project_rover.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project_rover.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -218,6 +218,6 @@ CMakeFiles/Project_rover.dir/clean:
 .PHONY : CMakeFiles/Project_rover.dir/clean
 
 CMakeFiles/Project_rover.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Dev\C\Rover_project\Project_rover D:\Dev\C\Rover_project\Project_rover D:\Dev\C\Rover_project\Project_rover\cmake-build-debug D:\Dev\C\Rover_project\Project_rover\cmake-build-debug D:\Dev\C\Rover_project\Project_rover\cmake-build-debug\CMakeFiles\Project_rover.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\batur\Desktop\okul\Project_rover C:\Users\batur\Desktop\okul\Project_rover C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug C:\Users\batur\Desktop\okul\Project_rover\cmake-build-debug\CMakeFiles\Project_rover.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Project_rover.dir/depend
 

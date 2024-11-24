@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "map.h"
 #include "CardPicker.h"
+#include "moves.h"
+#include "tree.h"
 
 int main() {
     t_map map;
@@ -60,20 +62,21 @@ int main() {
         printf("\n");
     }
     displayMap(map);
-
     //---- Part to test card picker ----
-    Card_deck test = initializeDeck();
-    print_list_from_head(*test);
 
-    t_move testHand[9];
-    DrawCard(test,testHand);
+    t_move* testHand;
+    testHand = getRandomMoves(NUMBER_OF_MOVE);
 
     printf("\n");
     //print hand
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < NUMBER_OF_MOVE; i++) {
         printf("%s ", getCardString(testHand[i]));
     }
+    printf("\n");
     //----------------------------------
+    p_tree testTree = createTree(loc_init(4,6,NORTH),map,testHand);
+    printf("\n \n");
+    printTree(testTree->root,0);
 
     return 0;
 }

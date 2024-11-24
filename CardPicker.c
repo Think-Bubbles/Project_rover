@@ -1,28 +1,30 @@
+//
+// Created by batur on 11.11.2024.
+//
+
 #include "CardPicker.h"
 
 //------- Functions to creates cards and Deck ------------
-
 Card_Node* create_node(t_move data) {
-    Card_Node* new_node = malloc(sizeof(Card_Node)); // Allocate memory for a new Card Node
-    new_node->data = data; // Assign the data value to the new node
-    new_node->prev = NULL; // Initialize the node's previous pointer to NULL
-    new_node->next = NULL; // Initialize the node's next pointer to NULL
+    Card_Node* new_node = (Card_Node*)malloc(sizeof(Card_Node));
+    new_node->data = data;
+    new_node->prev = NULL;
+    new_node->next = NULL;
     return new_node;
 }
 
 void insert_at_head(Card_deck deck, t_move data) {
-    Card_Node* new_node = create_node(data); // Create a new node with the provided data
-    if (*deck != NULL) { // If the deck already contains nodes
-        (*deck)->prev = new_node; // update the previous pointer of the current head of the deck to point to the new node
+    Card_Node* new_node = create_node(data);
+    if (*deck != NULL) {
+        (*deck)->prev = new_node;
     }
-    new_node->next = *deck; // The deck is empty so simply set the current head to the new node
+    new_node->next = *deck;
     *deck = new_node;
 }
-
 //----------------------------------------
 
-Card_deck initializeDeck() {
-    Card_deck newDeck;
+
+Card_deck initializeDeck(Card_deck newDeck) {
     for (int i = 0; i < 22; i++) {
         insert_at_head(newDeck,F_10);
     }
@@ -48,7 +50,6 @@ Card_deck initializeDeck() {
 }
 
 //-------- Test Functions ---------
-
 void print_list_from_head(Card_Node* head) {
     Card_Node* temp = head;
     printf("Liste : ");
@@ -71,7 +72,6 @@ const char* getCardString(t_move m) {
         default: return "Unknown";
     }
 }
-
 //----------------------------------------
 
 void DrawCard(Card_deck deck, t_move* hand)
@@ -80,27 +80,35 @@ void DrawCard(Card_deck deck, t_move* hand)
     int CardNumber = 100;
     srand(time(0)^ getpid());
 
-    for (int i = 0; i < 9; ++i) {
+    for (int i = 0; i < NUMBER_OF_MOVE; ++i) {
 
-        int temp = rand() % (CardNumber + 1); // generate a random number between 0 and cardnumber+1
-        Card_Node *n = *deck; // Set a node to the head of the deck
+        int temp = rand() % (CardNumber + 1);
+        Card_Node *n = *deck;
         for (int j = 0; j < temp-1; ++j) {
             n = n->next;
         }
-        printf("Card drawn: %s\n", getCardString(n->data));
-        hand[i] = n->data; // Insert into our list the type of movement we picked.
+        hand[i] = n->data;
 
         // Remove the card from the deck
-        if (n->prev != NULL) { // If the drawn card is not the first one in the deck,
-            n->prev->next = n->next;  // link the previous card with the next card to remove the drawn card from the deck
+        if (n->prev != NULL) {
+            n->prev->next = n->next;
         }
-        else { // If the drawn card is the first one,
-            *deck = n->next; // set the next card to be the head of the deck
+        else {
+            *deck = n->next;
         }
 
         for (int skip = 0; skip < 3; skip++) rand();
-        // Generate numbers to move the rand() internal pointer to increase randomness
 
-        CardNumber--; // Decrease the total number of cards after drawing
+        CardNumber--;
     }
+}
+
+t_move* remove_possibility(t_move* possibilities, int len, int idx) {
+    t_move* new_possibilities = (t_move*) malloc((len-1) * sizeof(t_move));
+    int j = 0;
+    for (int i = 0; i < len-1; i++){
+        if (i == idx) j++;
+        new_possibilities[i] = possibilities[j++];
+    }
+    return new_possibilities;
 }

@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Dev/C/Rover_project/Project_rover/cmake-build-debug",
-		"source" : "D:/Dev/C/Rover_project/Project_rover"
+		"build" : "C:/Users/batur/Desktop/okul/Project_rover/cmake-build-debug",
+		"source" : "C:/Users/batur/Desktop/okul/Project_rover"
 	},
 	"version" : 
 	{
