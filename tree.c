@@ -91,7 +91,12 @@ p_node buildTreeRec(p_node parent, t_map map, p_tree tree, t_localisation loc, i
     node->sons = malloc(num_sons*sizeof(p_node));
 
     for (int i = 0; i < num_sons; i++) { /// In any other cases, the node will have a or multiple sons
-        t_localisation new_loc = move(loc, remainingMoves[i]);
+        t_localisation new_loc;
+        if(map.soils[y][x] == ERG) {
+            new_loc = Movement_on_erg(loc, remainingMoves[i]); /// If the rover is on the erg, we move it accordingly
+        } else {
+            new_loc = move(loc, remainingMoves[i]);
+        }
         t_move* newRemainingMoves = remove_possibility(remainingMoves, num_sons, i);
         node->sons[i] = buildTreeRec(node, map, tree, new_loc, depth+1, remainingMoves[i], newRemainingMoves);
     }
@@ -107,4 +112,22 @@ void printTree(p_node node, int depth) {
     for (int i = 0; i < node->nb_sons; i++) {
         printTree(node->sons[i], depth+1);
     }
+}
+//----------------------------------------
+
+//------- Terrain interaction functions -------
+t_localisation Movement_on_erg(t_localisation loc, t_move mvt) {
+    t_move adjustedMove = mvt;
+
+    if (mvt == F_30) {
+        adjustedMove = F_20;
+    } else if (mvt == F_20) {
+        adjustedMove = F_10;
+    } else if (mvt == U_TURN) {
+        if (rand() % 2 == 1)
+            adjustedMove = T_RIGHT;
+        else
+            adjustedMove = T_LEFT;
+    }
+    return move(loc, adjustedMove);
 }
