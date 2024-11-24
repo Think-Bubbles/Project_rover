@@ -3,6 +3,7 @@
 #include "CardPicker.h"
 #include "moves.h"
 #include "tree.h"
+#include "paths.h"
 
 int main() {
     t_map map;
@@ -77,6 +78,7 @@ int main() {
     p_tree testTree = createTree(loc_init(4,6,NORTH),map,testHand);
     printf("\n \n");
     printTree(testTree->root,0);
-
+    t_stack stack = findBestPath(testTree);
+    printBestPath(stack);
     return 0;
 }
