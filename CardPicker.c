@@ -1,24 +1,20 @@
-//
-// Created by batur on 11.11.2024.
-//
-
 #include "CardPicker.h"
 
 //------- Functions to creates cards and Deck ------------
 Card_Node* create_node(t_move data) {
     Card_Node* new_node = (Card_Node*)malloc(sizeof(Card_Node));
-    new_node->data = data;
-    new_node->prev = NULL;
-    new_node->next = NULL;
+    new_node->data = data; /// set the given Data
+    new_node->prev = NULL; /// set the previous to Null
+    new_node->next = NULL; /// set the next to Null
     return new_node;
 }
 
 void insert_at_head(Card_deck deck, t_move data) {
-    Card_Node* new_node = create_node(data);
-    if (*deck != NULL) {
-        (*deck)->prev = new_node;
+    Card_Node* new_node = create_node(data); /// Make a new node
+    if (*deck != NULL) { /// If our deck isn't empty
+        (*deck)->prev = new_node; /// Take the current head of the deck, set its previous equal to our new node
     }
-    new_node->next = *deck;
+    new_node->next = *deck; /// Then in both cases set the next of our new node equal to the head of the deck.
     *deck = new_node;
 }
 //----------------------------------------
@@ -50,6 +46,7 @@ Card_deck initializeDeck(Card_deck newDeck) {
 }
 
 //-------- Test Functions ---------
+
 void print_list_from_head(Card_Node* head) {
     Card_Node* temp = head;
     printf("Liste : ");
@@ -74,8 +71,7 @@ const char* getCardString(t_move m) {
 }
 //----------------------------------------
 
-void DrawCard(Card_deck deck, t_move* hand)
-{
+void DrawCard(Card_deck deck, t_move* hand) {
 
     int CardNumber = 100;
     srand(time(0)^ getpid());
