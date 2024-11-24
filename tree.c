@@ -24,11 +24,11 @@ p_node createNode(t_localisation loc, t_move move, int cost, int depth, int num_
     return node;
 }
 
-p_tree createTree(t_localisation root_loc, t_map map, t_move* moveList) {
+p_tree createTree(t_localisation root_loc, t_map map, t_move* moveList, int stoppedAtReg) {
     p_tree tree = malloc(sizeof (t_tree));
 
     t_move no_move = -1; /// No moves were made to get to this beginning position so we set it to -1, think of it as Undefined
-    tree->max_depth = NB_UTILIZED_MOVES; /// Cap the maximum allowed height (or depth) of the tree
+    tree->max_depth = NB_UTILIZED_MOVES-stoppedAtReg; /// Cap the maximum allowed height (or depth) of the tree
     tree->root = buildTreeRec(NULL, map, tree, root_loc, 0, no_move, moveList); /// Create the rest of the tree based off of the root.
     /// Since it is the root we consider the parent to be NULL; we take the standard map;
     // createNode(root_loc, no_move, COST_UNDEF, 0, num_sons, NULL);

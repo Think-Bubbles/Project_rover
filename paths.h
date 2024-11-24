@@ -9,9 +9,9 @@ p_node findMinimalNode(p_node node, int* min_cost, p_node currentMin);
 
 p_node findBestNode(t_tree *tree);
 
-t_stack extractPath(p_node node, p_tree tree);
+t_stack extractPath(p_node node, p_tree tree, t_map map,int* stoppedAtReg);
 
-t_stack findBestPath(t_tree *tree);
+t_stack findBestPath(t_tree *tree, t_map map,int* stoppedAtReg);
 
 void printBestPath(t_stack path);
 

@@ -27,31 +27,26 @@ p_node findBestNode(t_tree *tree) {
     return findMinimalNode(tree->root, &min_cost, NULL);
 }
 
-t_stack extractPath(p_node node, p_tree tree)
+t_stack extractPath(p_node node, p_tree tree, t_map map,int* stoppedAtReg)
 {
-    t_stack path = createStack(6); //6 psk max_depth = 5 et on prend la racine dont la depth = 0
+    t_stack path = createStack(tree->max_depth+1); //6 psk max_depth = 5 et on prend la racine dont la depth = 0
 
     p_node current = node;
     while (current != tree->root)
     {
-        push(&path, current->move); //on ajoute le mouvement dans le stack
+        push(&path, current->move); //on ajoute le mouvement dans le stack)
+        if (map.soils[current->localisation.pos.y][current->localisation.pos.x] == REG)
+            *stoppedAtReg = 1; //on a rencontré un reg
         current = current->parent; //on remonte dans l'arbre
     }
-    /*
-    t_stack final_path = createStack(6);
 
-    while (path.nbElts > 0) //on inverse le chemin psk on veut de la racine au noeud
-    {
-        t_move move = pop(&path);
-        push(&final_path, pop(&path)); //on inverse le stack
-    }*/
     return path;
 }
 
-t_stack findBestPath(t_tree *tree)
+t_stack findBestPath(t_tree *tree, t_map map, int* stoppedAtReg)
 {
     p_node bestNode = findBestNode(tree);
-    return extractPath(bestNode, tree);
+    return extractPath(bestNode, tree, map, stoppedAtReg);
 }
 
 void printBestPath(t_stack path) {

@@ -13,6 +13,8 @@
 
 t_localisation initialiseRoverStart(t_map map);
 
+void DisplayCostMap(t_map map, t_localisation rover);
+
 void printWithDelay(const char* text, int delayMilliSeconds) {
     while (*text) {
         printf("%c", *text++);
@@ -129,6 +131,64 @@ int main() {
     }
 
     printf("\nNow here is the map represented through costs : \n");
+    DisplayCostMap(map, rover);
+
+    printf("\n");
+    displayMap(map);
+
+// ---- Initialisaiton of variables before the loop ----
+    printf("\n \n");
+    t_move* testHand;
+    p_tree testTree;
+    p_node BestNode = NULL;
+    int phase = 1;
+    int stoppedAtReg = 0; // Flag to check if the rover stopped at a reg
+    t_localisation phaseStartLocation = loc_init(4,6,NORTH);
+//------------------------------------------------------------
+
+//----- Main loop of the simulation -----
+    do {
+        printf("Phase %d: \n", phase);
+
+//----- Draw cards -----
+        testHand = getRandomMoves(NUMBER_OF_MOVE);
+
+        printf("Drawn cards: | ");
+        //print hand
+        for (int i = 0; i < NUMBER_OF_MOVE; i++) {
+            printf("%s | ", getCardString(testHand[i]));
+        }
+        printf("\n");
+
+//----- Create tree and calculate the best path -----
+        testTree = createTree(phaseStartLocation,map,testHand,stoppedAtReg);
+        stoppedAtReg = 0; // Reset the flag
+        t_stack stack = findBestPath(testTree, map, &stoppedAtReg);
+        printBestPath(stack);
+
+//----- Prepare for next phase -----
+        BestNode = findBestNode(testTree);
+        phaseStartLocation = BestNode->localisation;
+        phase++;
+
+//----- Display the map -----
+        printf("\n---------- Map ----------\n");
+        DisplayCostMap(map, phaseStartLocation);
+        printf("----------------------\n");
+        printf("\n");
+
+//----- Free memory -----
+        free(testHand);
+        deleteNode(testTree->root);
+        free(testTree);
+
+    } while(BestNode->terrain_cost != 0); // Continue until the rover reaches the base station
+
+
+    return 0;
+}
+
+void DisplayCostMap(t_map map, t_localisation rover) {
     for (int i = 0; i < map.y_max; i++) {
         for (int j = 0; j < map.x_max; j++) {
             if (i == rover.pos.y && j == rover.pos.x) {
@@ -149,48 +209,11 @@ int main() {
                     default:
                         orientation = 'R'; // Default to 'R' if something goes wrong
                 }
-                printf("(R%-2d %c) ", map.costs[i][j], orientation); // print 'R', then the cost along with the rover orientation at the rover's position
+                printf("(%-2dR%c) ", map.costs[i][j], orientation); // print 'R', then the cost along with the rover orientation at the rover's position
             } else {
                 printf("%-5d ", map.costs[i][j]);
             }
         }
         printf("\n");
     }
-    printf("\n");
-    displayMap(map);
-
-
-    printf("\n \n");
-    t_move* testHand;
-    p_tree testTree;
-    p_node BestNode = NULL;
-    int phase = 1;
-    t_localisation phaseStartLocation = loc_init(4,6,NORTH);
-
-    do {
-        printf("Phase %d: \n", phase);
-
-        testHand = getRandomMoves(NUMBER_OF_MOVE);
-
-        printf("Drawn cards: | ");
-        //print hand
-        for (int i = 0; i < NUMBER_OF_MOVE; i++) {
-            printf("%s | ", getCardString(testHand[i]));
-        }
-        printf("\n");
-
-        testTree = createTree(phaseStartLocation,map,testHand);
-        t_stack stack = findBestPath(testTree);
-        printBestPath(stack);
-
-        BestNode = findBestNode(testTree);
-        phaseStartLocation = BestNode->localisation;
-        phase++;
-        printf("\n");
-    } while(BestNode->terrain_cost != 0);
-
-    //printTree(testTree->root,0);
-
-
-    return 0;
 }

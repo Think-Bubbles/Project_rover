@@ -44,7 +44,7 @@ p_node createNode(t_localisation loc, t_move move, int cost, int depth, int num_
  * @param moveList A list of moves that can be used to build the tree.
  * @return Pointer to the newly created tree.
  */
-p_tree createTree(t_localisation root_loc, t_map map, t_move* moveList);
+p_tree createTree(t_localisation root_loc, t_map map, t_move* moveList, int stoppedAtReg);
 
 /**
  * @brief Prints the tree from the specified node and depth level.
