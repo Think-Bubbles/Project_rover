@@ -159,21 +159,38 @@ int main() {
     printf("\n");
     displayMap(map);
 
-    //---- Part to test card picker ----
-    t_move* testHand;
-    testHand = getRandomMoves(NUMBER_OF_MOVE);
 
-    printf("\n");
-    //print hand
-    for (int i = 0; i < NUMBER_OF_MOVE; i++) {
-        printf("%s ", getCardString(testHand[i]));
-    }
-    printf("\n");
-    //----------------------------------
-    p_tree testTree = createTree(loc_init(4,6,NORTH),map,testHand);
     printf("\n \n");
-    printTree(testTree->root,0);
-    t_stack stack = findBestPath(testTree);
-    printBestPath(stack);
+    t_move* testHand;
+    p_tree testTree;
+    p_node BestNode = NULL;
+    int phase = 1;
+    t_localisation phaseStartLocation = loc_init(4,6,NORTH);
+
+    do {
+        printf("Phase %d: \n", phase);
+
+        testHand = getRandomMoves(NUMBER_OF_MOVE);
+
+        printf("Drawn cards: | ");
+        //print hand
+        for (int i = 0; i < NUMBER_OF_MOVE; i++) {
+            printf("%s | ", getCardString(testHand[i]));
+        }
+        printf("\n");
+
+        testTree = createTree(phaseStartLocation,map,testHand);
+        t_stack stack = findBestPath(testTree);
+        printBestPath(stack);
+
+        BestNode = findBestNode(testTree);
+        phaseStartLocation = BestNode->localisation;
+        phase++;
+        printf("\n");
+    } while(BestNode->terrain_cost != 0);
+
+    //printTree(testTree->root,0);
+
+
     return 0;
 }
