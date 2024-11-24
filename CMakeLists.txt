@@ -20,5 +20,7 @@ add_executable(Project_rover main.c
         tree.c
         paths.c
         paths.h
+        times.c
+        times.h
 )
 
