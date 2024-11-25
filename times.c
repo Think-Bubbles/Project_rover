@@ -1,6 +1,3 @@
-//
-// Created by HIM on 24/11/2024.
-//
 #include "times.h"
 
 clock_t start_time()

@@ -25,9 +25,9 @@ void printWithDelay(const char* text, int delayMilliSeconds) {
 
 void printIntro() {
 
-    printWithDelay("Starting Mars Rover Simulation...\n", 50);  // Print letter by letter
+    printWithDelay("Starting Mars Rover Simulation...\n", 100);  // Print letter by letter
 
-    usleep(400);
+    usleep(500);
 
     const char* intro_lines[] = {
             " __  __                  ____                     \n",
@@ -38,32 +38,78 @@ void printIntro() {
     };
 
     for (int i = 0; i < sizeof(intro_lines) / sizeof(intro_lines[0]); i++) {
-        printWithDelay(intro_lines[i], 10);  // Speeding up this part further
+        printWithDelay(intro_lines[i], 30);  // Speeding up this part further
     }
 
-    usleep(500); // A final pause before continuing
+    //usleep(500); // A final pause before continuing
 }
 
 t_localisation initialiseRoverStart(t_map map) {
     int edge = rand() % 4; // Generate a number between 1 and 4 to decide which side the rover is on
     t_localisation rover;
 
-    switch (edge) // Filter through each case
-    {
-        case 0: // Top edge
-            rover = loc_init(rand() % map.x_max, 0, rand() % 3 + 1); // can't face up (0)
-            break;
-        case 1: // Right edge
-            rover = loc_init(map.x_max - 1, rand() % map.y_max, (rand() % 3 + 1) % 4); // can't face right (1)
-            break;
-        case 2: // Bottom edge
-            rover = loc_init(rand() % map.x_max, map.y_max - 1, (rand() % 3 + 2) % 4); // can't face down (2)
-            break;
-        default: // Left edge
-            rover = loc_init(0, rand() % map.y_max, (rand() % 3 + 3) % 4); // can't face left (3)
-            break;
-    }
-    while (map.soils[rover.pos.y][rover.pos.x] == CREVASSE); // In case the rover starts in a crevasse, regenerate the position
+    do {
+        edge = rand() % 4; // Generate a number between 0 and 3 to decide which side the rover is on
+
+        switch (edge) {
+            case 0: { // Top edge
+                int x = rand() % map.x_max;
+                int direction = rand() % 3 + 1; // 1 (EAST), 2 (SOUTH), or 3 (WEST)
+                if (x == 0) { // Top left corner
+                    direction = (rand() % 2) + 1; // Must face EAST (1) or SOUTH (2)
+                } else if (x == map.x_max - 1) { // Top right corner
+                    direction = (rand() % 2) + 2; // Must face SOUTH (2) or WEST (3)
+                }
+                rover = loc_init(x, 0, (t_orientation)direction);
+                break;
+            }
+            case 1: { // Right edge
+                int y = rand() % map.y_max;
+                int direction = 0; // Set a default invalid direction
+                while (direction == EAST) {
+                    direction = rand() % 4; // 0 (NORTH), 2 (SOUTH), or 3 (WEST)
+                }
+                if (y == 0) { // Top right corner
+                    direction = (rand() % 2) + 2; // Must face SOUTH (2) or WEST (3)
+                } else if (y == map.y_max - 1) { // Bottom right corner
+                    direction = rand() % 2 + 0; // Must face NORTH (0) or WEST (3)
+                    if (direction == 1) direction = 3; // Adjust if random choice was invalid
+                }
+                rover = loc_init(map.x_max - 1, y, (t_orientation)direction);
+                break;
+            }
+            case 2: { // Bottom edge
+                int x = rand() % map.x_max;
+                int direction = 0; // Set a default invalid direction
+                while (direction == SOUTH) {
+                    direction = rand() % 4; // 0 (NORTH), 1 (EAST), or 3 (WEST)
+                }
+                if (x == 0) { // Bottom left corner
+                    direction = rand() % 2 + 1; // Must face EAST (1) or NORTH (0)
+                    if (direction == 2) direction = 0; // Adjust if random choice was invalid
+                } else if (x == map.x_max - 1) { // Bottom right corner
+                    direction = rand() % 2; // Must face NORTH (0) or WEST (3)
+                }
+                rover = loc_init(x, map.y_max - 1, (t_orientation)direction);
+                break;
+            }
+            default: { // Left edge
+                int y = rand() % map.y_max;
+                int direction = 0; // Set a default invalid direction
+                while (direction == WEST) {
+                    direction = rand() % 4; // 0 (NORTH), 1 (EAST), or 2 (SOUTH)
+                }
+                if (y == 0) { // Top left corner
+                    direction = (rand() % 2) + 1; // Must face EAST (1) or SOUTH (2)
+                } else if (y == map.y_max - 1) { // Bottom left corner
+                    direction = rand() % 2 + 1; // Must face EAST (1) or NORTH (0)
+                    if (direction == 2) direction = 0; // Adjust if random choice was invalid
+                }
+                rover = loc_init(0, y, (t_orientation)direction);
+                break;
+            }
+        }
+    } while (map.soils[rover.pos.y][rover.pos.x] == CREVASSE); // In case the rover starts in a crevasse, regenerate the position
     return rover;
 }
 
@@ -71,26 +117,25 @@ int main() {
 
     printIntro();
 
-    t_map first_map = createMapFromFile("..\\maps\\example1.map");
-    t_map second_map = createMapFromFile("..\\maps\\example2.map");
-    t_map training_map = createMapFromFile("..\\maps\\training.map");
-
     unsigned int map_choice;
 
-    printf("\nWhich map would you like to choose : (Choose a number between 0 and 2) \n");
+    printf("\nWhich map would you like to choose : (Choose a number between 0 and 3) \n");
     scanf("%u", &map_choice);
 
     // Assuming 'map' is selected based on map_choice
     t_map map;
     switch (map_choice) {
         case 0:
-            map = first_map;
+            map = createMapFromFile("..\\maps\\example1.map");
             break;
         case 1:
-            map = second_map;
+            map = createMapFromFile("..\\maps\\example2.map");
             break;
         case 2:
-            map = training_map;
+            map = createMapFromFile("..\\maps\\example3.map");
+            break;
+        case 3:
+            map = createMapFromFile("..\\maps\\training.map");
             break;
         default:
             printf("Invalid choice");
@@ -134,7 +179,7 @@ int main() {
     DisplayCostMap(map, rover);
 
     printf("\n");
-    displayMap(map);
+    // displayMap(map);
 
 // ---- Initialisaiton of variables before the loop ----
     printf("\n \n");
@@ -210,8 +255,9 @@ void DisplayCostMap(t_map map, t_localisation rover) {
                         orientation = 'R'; // Default to 'R' if something goes wrong
                 }
                 printf("(%-2dR%c) ", map.costs[i][j], orientation); // print 'R', then the cost along with the rover orientation at the rover's position
+
             } else {
-                printf("%-5d ", map.costs[i][j]);
+                printf("%-6d ", map.costs[i][j]);
             }
         }
         printf("\n");
