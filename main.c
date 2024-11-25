@@ -45,11 +45,11 @@ void printIntro() {
 }
 
 t_localisation initialiseRoverStart(t_map map) {
-    int edge = rand() % 4; // Generate a number between 1 and 4 to decide which side the rover is on
+    int edge;
     t_localisation rover;
 
     do {
-        edge = rand() % 4; // Generate a number between 0 and 3 to decide which side the rover is on
+        edge = rand() % 4; // Generate a number between 0 and 4 to decide which side the rover is on
 
         switch (edge) {
             case 0: { // Top edge
@@ -113,10 +113,41 @@ t_localisation initialiseRoverStart(t_map map) {
     return rover;
 }
 
+void DisplayCostMap(t_map map, t_localisation rover) {
+    for (int i = 0; i < map.y_max; i++) {
+        for (int j = 0; j < map.x_max; j++) {
+            if (i == rover.pos.y && j == rover.pos.x) {
+                char orientation;
+                switch (rover.ori) {
+                    case 0:
+                        orientation = '^'; // North
+                        break;
+                    case 1:
+                        orientation = '>'; // East
+                        break;
+                    case 2:
+                        orientation = 'v'; // South
+                        break;
+                    case 3:
+                        orientation = '<'; // West
+                        break;
+                    default:
+                        orientation = 'R'; // Default to 'R' if something goes wrong
+                }
+                printf("(%-2dR%c) ", map.costs[i][j], orientation); // print 'R', then the cost along with the rover orientation at the rover's position
+
+            } else {
+                printf("%-6d ", map.costs[i][j]);
+            }
+        }
+        printf("\n");
+    }
+}
+
 int main() {
 
     printIntro();
-
+    srand(time(0)); // Initialise a random number generator
     unsigned int map_choice;
 
     printf("\nWhich map would you like to choose : (Choose a number between 0 and 3) \n");
@@ -142,10 +173,35 @@ int main() {
             return 1;
     }
 
-    srand(time(NULL)); // Initialise a random number generator
+    //------ Choose the starting location of the rover ------
+    unsigned int location_choice;
+    printf("\nDo you want a random starting location (press 1) or the test location for the map (press 0) :  \n");
+    scanf("%u", &location_choice);
+    t_localisation rover; // The rover's starting location and orientation
+    if(location_choice == 1) {
+        rover = initialiseRoverStart(map); // Random starting location
+    }
+    else {
+        switch (map_choice) {
+            case 0:
+                rover = loc_init(4,6,NORTH);
+                break;
+            case 1:
+                rover = loc_init(8,0,SOUTH);
+                break;
+            case 2:
+                rover = loc_init(12,0,SOUTH);
+                break;
+            case 3:
+                rover = loc_init(0,10,NORTH);
+                break;
+            default:
+                printf("Invalid choice");
+                return 1;
+        }
+    }
 
-    t_localisation rover = initialiseRoverStart(map);
-
+    //-------- Display the map with the rover's position and orientation --------
     printf("Here is a %d x %d map : \n", map.y_max, map.x_max);
     for (int i = 0; i < map.y_max; i++) {
         for (int j = 0; j < map.x_max; j++) {
@@ -181,14 +237,14 @@ int main() {
     printf("\n");
     // displayMap(map);
 
-// ---- Initialisaiton of variables before the loop ----
+// ---- Initialisation of variables before the loop ----
     printf("\n \n");
     t_move* testHand;
     p_tree testTree;
     p_node BestNode = NULL;
     int phase = 1;
     int stoppedAtReg = 0; // Flag to check if the rover stopped at a reg
-    t_localisation phaseStartLocation = loc_init(4,6,NORTH);
+    t_localisation phaseStartLocation = rover;
 //------------------------------------------------------------
 
 //----- Main loop of the simulation -----
@@ -233,33 +289,4 @@ int main() {
     return 0;
 }
 
-void DisplayCostMap(t_map map, t_localisation rover) {
-    for (int i = 0; i < map.y_max; i++) {
-        for (int j = 0; j < map.x_max; j++) {
-            if (i == rover.pos.y && j == rover.pos.x) {
-                char orientation;
-                switch (rover.ori) {
-                    case 0:
-                        orientation = '^'; // North
-                        break;
-                    case 1:
-                        orientation = '>'; // East
-                        break;
-                    case 2:
-                        orientation = 'v'; // South
-                        break;
-                    case 3:
-                        orientation = '<'; // West
-                        break;
-                    default:
-                        orientation = 'R'; // Default to 'R' if something goes wrong
-                }
-                printf("(%-2dR%c) ", map.costs[i][j], orientation); // print 'R', then the cost along with the rover orientation at the rover's position
 
-            } else {
-                printf("%-6d ", map.costs[i][j]);
-            }
-        }
-        printf("\n");
-    }
-}

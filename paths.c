@@ -8,7 +8,7 @@ p_node findMinimalNode(p_node node, int* min_cost, p_node currentMin) {
     if (node->terrain_cost < *min_cost || /// The cost is inferior to what we currently consider to be the minimal cost
         (node->terrain_cost == *min_cost && /// Or the cost is equal to what we already have
          (currentMin == NULL || node->depth < currentMin->depth))) { /// (If they both are equal) Check which one has the lowest depth
-        *min_cost = node->terrain_cost; /// Updat the current minimal cost
+        *min_cost = node->terrain_cost; /// Update the current minimal cost
         currentMin = node;
     }
 
@@ -48,7 +48,7 @@ t_stack findBestPath(t_tree *tree, t_map map, int* stoppedAtReg) {
 }
 
 void printBestPath(t_stack path) {
-    printf("Chemin optimal (racine -> noeud) :\n");
+    printf("Optimal path (root -> node) :\n");
     while (path.nbElts > 0) {
         /// Unstack an element from the stack
         t_move move = pop(&path);
