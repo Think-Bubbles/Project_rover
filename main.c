@@ -265,6 +265,7 @@ int main() {
         stoppedAtReg = 0; // Reset the flag
         t_stack stack = findBestPath(testTree, map, &stoppedAtReg);
         printBestPath(stack);
+        //printTree(testTree->root, 0);   Uncomment to print the tree
 
 //----- Prepare for next phase -----
         BestNode = findBestNode(testTree);

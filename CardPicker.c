@@ -1,4 +1,15 @@
+/*
+ * !!!!
+ * This file is obsolete and is not used in the final version of the project.
+ * CardPicker system was used to simulate the drawing of movement cards from a movement deck.
+ * however due to its pointer issues and the getRandomMoves function given in the new version of move.c
+ * it was replaced by the much simpler getRandomMoves function.
+ * We decided to keep this file in the project as a reference to the old version of the project.
+ * !!!!
+ * */
+
 #include "CardPicker.h"
+#include "tree.h"
 
 //------- Functions to creates cards and Deck ------------
 Card_Node* create_node(t_move data) {

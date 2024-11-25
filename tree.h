@@ -21,6 +21,7 @@ typedef struct s_tree
     int max_depth;
 }t_tree, *p_tree;
 
+static int NUMBER_OF_MOVE = 9;
 static int NB_UTILIZED_MOVES = 5;
 
 /**
