@@ -65,7 +65,7 @@ t_localisation initialiseRoverStart(t_map map) {
             }
             case 1: { // Right edge
                 int y = rand() % map.y_max;
-                int direction = 0; // Set a default invalid direction
+                int direction = rand() % 4; // Set a default invalid direction
                 while (direction == EAST) {
                     direction = rand() % 4; // 0 (NORTH), 2 (SOUTH), or 3 (WEST)
                 }
@@ -80,7 +80,7 @@ t_localisation initialiseRoverStart(t_map map) {
             }
             case 2: { // Bottom edge
                 int x = rand() % map.x_max;
-                int direction = 0; // Set a default invalid direction
+                int direction = rand() % 4; // Set a default invalid direction
                 while (direction == SOUTH) {
                     direction = rand() % 4; // 0 (NORTH), 1 (EAST), or 3 (WEST)
                 }
@@ -95,7 +95,7 @@ t_localisation initialiseRoverStart(t_map map) {
             }
             default: { // Left edge
                 int y = rand() % map.y_max;
-                int direction = 0; // Set a default invalid direction
+                int direction = rand() % 4; // Set a default invalid direction
                 while (direction == WEST) {
                     direction = rand() % 4; // 0 (NORTH), 1 (EAST), or 2 (SOUTH)
                 }
