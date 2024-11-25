@@ -27,6 +27,8 @@ For now, we have implemented the following features:
 Since this is a simulation, there isn’t much for the user to do! Simply follow the on-screen instructions to select a map, and then sit back and watch the simulation unfold as the rover navigates its way back to the base station.
 No additional input is required during the process. Enjoy observing the efficiency of our algorithm in action!
 
+If you wish to change the amounts of cards you can draw and pick, go into the tree.h file and you'll see the associated variable that you can modify
+
 ## ⚙️ Installation
 
 To set up and run the Mars Project Simulator:
