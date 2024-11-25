@@ -6,7 +6,7 @@
 Welcome to the Mars Project Simulator! This project is a C-based simulation of a rover navigating the challenging terrain of Mars to return to its base station. Using an efficient pathfinding algorithm, the simulator calculates the most cost-effective route, optimizing for energy and time.
 
 <p align="center" width="100%">
-    | <a href=🚀"#🚀-features">Features</a> | <a href="🛠#🛠️-getting-started">Getting Started</a> | <a href="⚙️#⚙️-installation">Installation</a> | <a href="#known-bugs">Known bugs</a> | <a href="👥#👥-contributors">Contributors</a> |
+    | <a href=🚀"#🚀-features">Features</a> | <a href="🛠#🛠️-getting-started">Getting Started</a> | <a href="⚙️#⚙️-installation">Installation</a> | <a href="#complexity">Complexity</a> | <a href="#known-bugs">Known bugs</a> | <a href="👥#👥-contributors">Contributors</a> |
 </p>
 
 ## 🚀 Features
@@ -55,6 +55,14 @@ Run the simulation:
 
 In order to use this program, please insure that you have the following installed
 - [Clion](https://www.jetbrains.com/fr-fr/clion/download/#section=windows) and at the very least version 3.27!
+
+## Complexity 
+
+| Combinaison   | Création arbre   | Recherche feuille min   | Calcul chemin racine   | Exemple de guidage complet |
+|---------------|------------------|--------------------------|-------------------------|-----------------------------|
+| 3 parmi 5     | ≈ 0,13 ms       | ≈ 0 ms                  | ≈ 0 ms                 | ≈ 0,14 ms                  |
+| 5 parmi 9     | ≈ 26,5 ms       | ≈ 0,17 ms               | ≈ 0,013 ms             | ≈ 6 ms                     |
+| 7 parmi 13    | ≈ 8,3 s         | ≈ 0,07 s                | ≈ 0,02 ms              | ≈ 2,36 s                   |
 
 ## Known bugs 
 
