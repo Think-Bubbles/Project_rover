@@ -7,7 +7,6 @@
 #include "tree.h"
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
 #include <unistd.h>  // For usleep function
 
 
@@ -25,7 +24,7 @@ void printWithDelay(const char* text, int delayMilliSeconds) {
 
 void printIntro() {
 
-    printWithDelay("Starting Mars Rover Simulation...\n", 100);  // Print letter by letter
+    printWithDelay("Starting Mars Rover Simulation...\n", 10000);  // Print letter by letter
 
     usleep(500);
 
@@ -38,7 +37,7 @@ void printIntro() {
     };
 
     for (int i = 0; i < sizeof(intro_lines) / sizeof(intro_lines[0]); i++) {
-        printWithDelay(intro_lines[i], 30);  // Speeding up this part further
+        printWithDelay(intro_lines[i], 3000);  // Speeding up this part further
     }
 
     //usleep(500); // A final pause before continuing
